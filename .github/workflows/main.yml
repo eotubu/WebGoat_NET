@@ -31,7 +31,7 @@ jobs:
       - name: Set up Fortify Bug Tracker Utility
         uses: fortify/gha-setup-bugtracker-utility@v1
         with:
-          version: 4.1
+          version: 4.10
 
       - name: Perform JIRA upload    
         env:
