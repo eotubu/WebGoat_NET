@@ -1,6 +1,10 @@
+# Sync defects at defined interval
 on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
   schedule:
-    - cron:  '* 7,18 * * *'                   # Sync defects at defined interval    
+    - cron:  '* 7,18 * * *'   
     
 jobs:
   FoD-BugTracker-Utility:
