@@ -17,6 +17,10 @@ jobs:
       security-events: write
 
     steps:
+      # Check out source code
+      - name: Check Out Source Code
+        uses: actions/checkout@v3
+        
       # Bug tracker utility has been successfully tested with 1.8, other versions may also work
       - name: Set up Java
         uses: actions/setup-java@v3               
