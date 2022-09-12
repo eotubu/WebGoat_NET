@@ -1,3 +1,4 @@
+# REQUIREMENT - In FoD portal, the desired app should be configured to either 'no bug tracker' or it should be set to 'Other'
 # Sync defects at defined interval
 on:
   workflow_dispatch:
@@ -9,7 +10,6 @@ on:
 jobs:
   FoD-BugTracker-Utility:
     # Use the appropriate runner for building your source code.
-    # TODO: Use a Windows runner for .NET projects that use msbuild. Additional changes to RUN commands will be required to switch to Windows syntax.
     runs-on: ubuntu-latest
     permissions:
       actions: read
