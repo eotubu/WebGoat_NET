@@ -43,5 +43,5 @@ jobs:
           FBTU_JIRABASEURL: https://territorypresales.atlassian.net/
           FBTU_JIRAUSERNAME: ${{ secrets.JIRA_USER }}
           FBTU_JIRAPASSWORD: ${{ secrets.JIRA_TOKEN }}
-          FBTU_JIRAPROJECTKEY: BugTracker_Utility
+          FBTU_JIRAPROJECTKEY: BU
         run: java -jar "$FBTU_JAR" -configFile "$FBTU_DIR/FoDToJira.xml" -FoDBaseUrl "$FBTU_FODBASEURL" -FoDTenant "$FBTU_FODTENANT" -FoDUserName "$FBTU_FODUSERNAME" -FoDPassword "$FBTU_FODPASSWORD" -FoDReleaseId "$FBTU_FODRELEASEID" --JiraBaseUrl "$FBTU_JIRABASEURL" -JiraUserName "$FBTU_JIRAUSERNAME" -JiraPassword "$FBTU_JIRAPASSWORD" -JiraProjectKey "$FBTU_JIRAPROJECTKEY"
