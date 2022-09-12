@@ -15,7 +15,7 @@ steps:
     FBTU_FODUSERNAME: ${{ secrets.FOD_USER }}
     FBTU_FODPASSWORD: ${{ secrets.FOD_PAT }}
     FBTU_FODRELEASEID: 378019
-    FBTU_JIRABASEURL: https://myjira.atlassian.net/
+    FBTU_JIRABASEURL: https://territorypresales.atlassian.net/
     FBTU_JIRAUSERNAME: ${{ secrets.JIRA_USER }}
     FBTU_JIRAPASSWORD: ${{ secrets.JIRA_TOKEN }}
     FBTU_JIRAPROJECTKEY: BugTracker_Utility
