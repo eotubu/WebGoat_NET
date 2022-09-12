@@ -13,13 +13,19 @@ jobs:
       security-events: write
 
 steps:
-- uses: actions/setup-java@v1                 # Set up Java
+  # Bug tracker utility has been successfully tested with 1.8, other versions may also work
+  - name: Set up Java
+    uses: actions/setup-java@v1               
+    with:
+      java-version: 1.8
+
+- name: Set up Fortify Bug Tracker Utility
+  uses: fortify/gha-setup-bugtracker-utility@v1
   with:
-    java-version: 1.8                         # Bug tracker utility has been successfully tested with 1.8, other versions may also work
-- uses: fortify/gha-setup-bugtracker-utility@v1 # Set up Fortify Bug Tracker Utility
-  with:
-    version: 4.1                                 # Optional as this is the default
-- env:
+    version: 4.1
+    
+- name: Perform JIRA upload    
+  env:
     FBTU_FODBASEURL: https://ams.fortify.com/
     FBTU_FODTENANT: ${{ secrets.FOD_TENANT }}
     FBTU_FODUSERNAME: ${{ secrets.FOD_USER }}
