@@ -1,0 +1,23 @@
+on:
+  schedule:
+    - cron:  '* 7,18 * * *'                   # Sync defects at defined interval
+
+steps:
+- uses: actions/setup-java@v1                 # Set up Java
+  with:
+    java-version: 1.8                         # Bug tracker utility has been successfully tested with 1.8, other versions may also work
+- uses: fortify/gha-setup-bugtracker-utility@v1 # Set up Fortify Bug Tracker Utility
+  with:
+    version: 4.1                                 # Optional as this is the default
+- env:
+    FBTU_FODBASEURL: https://ams.fortify.com/
+    FBTU_FODTENANT: ${{ secrets.FOD_TENANT }}
+    FBTU_FODUSERNAME: ${{ secrets.FOD_USER }}
+    FBTU_FODPASSWORD: ${{ secrets.FOD_PAT }}
+    FBTU_FODRELEASEID: 378019
+    FBTU_JIRABASEURL: https://myjira.atlassian.net/
+    FBTU_JIRAUSERNAME: ${{ secrets.JIRA_USER }}
+    FBTU_JIRAPASSWORD: ${{ secrets.JIRA_TOKEN }}
+    FBTU_JIRAPROJECTKEY: BugTracker_Utility
+  run: |
+    java -jar "$FBTU_JAR" -configFile "$FBTU_DIR/FoDToJira.xml" -FoDBaseUrl "$FBTU_FODBASEURL" -FoDTenant "$FBTU_FODTENANT" -FoDUserName "$FBTU_FODUSERNAME" -FoDPassword "$FBTU_FODPASSWORD" -FoDReleaseId "$FBTU_FODRELEASEID" --JiraBaseUrl "$FBTU_JIRABASEURL" -JiraUserName "$FBTU_JIRAUSERNAME" -JiraPassword "$FBTU_JIRAPASSWORD" -JiraProjectKey "$FBTU_JIRAPROJECTKEY"
