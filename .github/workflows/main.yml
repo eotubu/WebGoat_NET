@@ -12,28 +12,28 @@ jobs:
       contents: read
       security-events: write
 
-steps:
-  # Bug tracker utility has been successfully tested with 1.8, other versions may also work
-  - name: Set up Java
-    uses: actions/setup-java@v3               
-    with:
-      java-version: 11
-      distribution: 'zulu'
-      
-  - name: Set up Fortify Bug Tracker Utility
-    uses: fortify/gha-setup-bugtracker-utility@v1
-    with:
-      version: 4.1
-    
-  - name: Perform JIRA upload    
-    env:
-      FBTU_FODBASEURL: https://ams.fortify.com/
-      FBTU_FODTENANT: ${{ secrets.FOD_TENANT }}
-      FBTU_FODUSERNAME: ${{ secrets.FOD_USER }}
-      FBTU_FODPASSWORD: ${{ secrets.FOD_PAT }}
-      FBTU_FODRELEASEID: 378019
-      FBTU_JIRABASEURL: https://territorypresales.atlassian.net/
-      FBTU_JIRAUSERNAME: ${{ secrets.JIRA_USER }}
-      FBTU_JIRAPASSWORD: ${{ secrets.JIRA_TOKEN }}
-      FBTU_JIRAPROJECTKEY: BugTracker_Utility
-    run: java -jar "$FBTU_JAR" -configFile "$FBTU_DIR/FoDToJira.xml" -FoDBaseUrl "$FBTU_FODBASEURL" -FoDTenant "$FBTU_FODTENANT" -FoDUserName "$FBTU_FODUSERNAME" -FoDPassword "$FBTU_FODPASSWORD" -FoDReleaseId "$FBTU_FODRELEASEID" --JiraBaseUrl "$FBTU_JIRABASEURL" -JiraUserName "$FBTU_JIRAUSERNAME" -JiraPassword "$FBTU_JIRAPASSWORD" -JiraProjectKey "$FBTU_JIRAPROJECTKEY"
+    steps:
+      # Bug tracker utility has been successfully tested with 1.8, other versions may also work
+      - name: Set up Java
+        uses: actions/setup-java@v3               
+        with:
+          java-version: 11
+          distribution: 'zulu'
+
+      - name: Set up Fortify Bug Tracker Utility
+        uses: fortify/gha-setup-bugtracker-utility@v1
+        with:
+          version: 4.1
+
+      - name: Perform JIRA upload    
+        env:
+          FBTU_FODBASEURL: https://ams.fortify.com/
+          FBTU_FODTENANT: ${{ secrets.FOD_TENANT }}
+          FBTU_FODUSERNAME: ${{ secrets.FOD_USER }}
+          FBTU_FODPASSWORD: ${{ secrets.FOD_PAT }}
+          FBTU_FODRELEASEID: 378019
+          FBTU_JIRABASEURL: https://territorypresales.atlassian.net/
+          FBTU_JIRAUSERNAME: ${{ secrets.JIRA_USER }}
+          FBTU_JIRAPASSWORD: ${{ secrets.JIRA_TOKEN }}
+          FBTU_JIRAPROJECTKEY: BugTracker_Utility
+        run: java -jar "$FBTU_JAR" -configFile "$FBTU_DIR/FoDToJira.xml" -FoDBaseUrl "$FBTU_FODBASEURL" -FoDTenant "$FBTU_FODTENANT" -FoDUserName "$FBTU_FODUSERNAME" -FoDPassword "$FBTU_FODPASSWORD" -FoDReleaseId "$FBTU_FODRELEASEID" --JiraBaseUrl "$FBTU_JIRABASEURL" -JiraUserName "$FBTU_JIRAUSERNAME" -JiraPassword "$FBTU_JIRAPASSWORD" -JiraProjectKey "$FBTU_JIRAPROJECTKEY"
