@@ -61,8 +61,6 @@ jobs:
       #   ScanCentral Client documentation is located at https://www.microfocus.com/documentation/fortify-software-security-center/
       - name: Download Fortify ScanCentral Client
         uses: fortify/gha-setup-scancentral-client@5b7382f8234fb9840958c49d5f32ae854115f9f3
-      - name: Run MSBuild variables
-        run: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VSDevCmd.bat"
       - name: Package Code + Dependencies
         run: scancentral.bat package $PACKAGE_OPTS -bf webgoat.net.sln -oss -o package.zip
         env:
