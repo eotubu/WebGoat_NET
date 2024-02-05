@@ -31,10 +31,6 @@ jobs:
     # Use the appropriate runner for building your source code.
     # TODO: Use a Windows runner for .NET projects that use msbuild. Additional changes to RUN commands will be required to switch to Windows syntax.
     runs-on: windows-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
 
    steps:
       # Check out source code
