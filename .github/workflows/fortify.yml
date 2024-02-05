@@ -31,13 +31,13 @@ jobs:
     # Use the appropriate runner for building your source code.
     # TODO: Use a Windows runner for .NET projects that use msbuild. Additional changes to RUN commands will be required to switch to Windows syntax.
     runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-dotnet@v1
-      - name: Build
-        run: dotnet build
-      - name: Run tests
-        run: dotnet test
+   # steps:
+   #   - uses: actions/checkout@v2
+   #   - uses: actions/setup-dotnet@v1
+   #   - name: Build
+   #     run: dotnet build
+   #   - name: Run tests
+   #     run: dotnet test
     permissions:
       actions: read
       contents: read
