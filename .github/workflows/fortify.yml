@@ -31,13 +31,6 @@ jobs:
     # Use the appropriate runner for building your source code.
     # TODO: Use a Windows runner for .NET projects that use msbuild. Additional changes to RUN commands will be required to switch to Windows syntax.
     runs-on: windows-latest
-   # steps:
-   #   - uses: actions/checkout@v2
-   #   - uses: actions/setup-dotnet@v1
-   #   - name: Build
-   #     run: dotnet build
-   #   - name: Run tests
-   #     run: dotnet test
     permissions:
       actions: read
       contents: read
@@ -55,6 +48,9 @@ jobs:
         with:
           java-version: 11
           distribution: 'zulu'
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
 
       # Prepare source+dependencies for upload. The default example is for a Maven project that uses pom.xml.
       # TODO: Update PACKAGE_OPTS based on the ScanCentral Client documentation for your project's included tech stack(s). Helpful hints:
