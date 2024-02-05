@@ -44,6 +44,9 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v2
 
+      - name: Run MSBuild variables
+        run: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VSDevCmd.bat"
+
       # Java is required to run the various Fortify utilities.
       # When scanning a Java application, please use the appropriate Java version for building your application.
       - name: Setup Java
