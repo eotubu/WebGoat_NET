@@ -43,6 +43,11 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'echo "##vso[task.setvariable SCANCENTRAL_JAVA_HOME=$JAVA_HOME_17_X64;]foo"'
+
 - task: BatchScript@1
   inputs:
     filename: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VSDevCmd.bat'
