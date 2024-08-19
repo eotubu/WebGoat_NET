@@ -44,3 +44,19 @@ steps:
     filename: 'Run script "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VSDevCmd.bat"'
     arguments: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VSDevCmd.bat"'
     modifyEnvironment: true
+
+- task: FortifyOnDemandStatic@9
+  inputs:
+    FortifyProjects: '$(Build.SourcesDirectory)'
+    FodConnection: 'FoD-setenant-int'
+    ReleaseOptions: '0'
+    ReleaseId: 1249532
+    EntitlementSelection: '1'
+    EntitlementPreference: '1'
+    OverrideScanSettings: '2'
+    InProgressScanActionType: '2'
+    RemediationScanPreference: '2'
+    BuildType: 'msbuild'
+    BuildFile: 'webgoat.net.sln'
+    PollingInterval: 0
+    PolicyFailAction: '0'
