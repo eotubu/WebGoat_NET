@@ -32,3 +32,15 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '11'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
+- task: BatchScript@1
+  inputs:
+    filename: 'Run script "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VSDevCmd.bat"'
+    arguments: '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VSDevCmd.bat"'
+    modifyEnvironment: true
