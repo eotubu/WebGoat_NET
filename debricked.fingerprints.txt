@@ -1,7 +1,7 @@
 file=60803fdbc76f57ea9e7ff211c7397592,175,.gitignore
-file=126d43b08ae98be35f743d2cef94be05,904935,.vs/WebGoat.NET/FileContentIndex/75a6d8f9-1dc9-48f3-87e0-430523a87fca.vsidx
-file=7dd9a2f9f3b073c25a10b4b02faf339f,179200,.vs/WebGoat.NET/v17/.suo
-file=1879c9f9c6e75ae547dc852610696c41,84368,.vs/WebGoat.NET/v17/fileList.bin
+file=126d43b08ae98be35f743d2cef94be05,904935,.vs/WebGoat.NET/FileContentIndex/835aff7b-1862-434e-b1d5-61740e178b99.vsidx
+file=33a6957e2d0dc0056cef90e050fb432e,189440,.vs/WebGoat.NET/v17/.suo
+file=fe274e594445994354ebcc6c58175681,84587,.vs/WebGoat.NET/v17/fileList.bin
 file=5bba8b16e02fe6e604e50afa1abd7814,2214,Backup/WebGoat/AddNewUser.aspx
 file=f8728775cf23db299927f5804cf9f394,3712,Backup/WebGoat/AddNewUser.aspx.cs
 file=c202b8967b23e97c1dd02e14909a16f0,1181,Backup/WebGoat/AddNewUser.aspx.designer.cs
